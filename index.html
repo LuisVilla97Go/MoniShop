@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moni Shop | Importaciones</title>
+    <link rel="icon" type="image/png" href="./images/icons/monito_icon.png" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "moni-pink": "#FF8FA3",
+              "moni-beige": "#F8F4E8",
+              "moni-cream": "#FDFBF7",
+              "moni-brown": "#4A3728",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-moni-cream text-moni-brown font-sans">
+    <!-- Clases dummy para que Tailwind las detecte -->
+    <div
+      class="hidden bg-moni-pink bg-moni-beige bg-moni-cream bg-moni-brown text-moni-pink text-moni-beige text-moni-cream text-moni-brown border-moni-pink border-moni-beige border-moni-cream border-moni-brown"
+    ></div>
+
+    <div id="app"></div>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - Moni Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "moni-pink": "#FF80AB",
+              "moni-brown": "#5D4037",
+              "moni-beige": "#F5F5DC",
+              "moni-cream": "#FFF8E1",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap");
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.5s ease-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-moni-cream">
+    <!-- Header -->
+    <header class="bg-white p-4 shadow-sm sticky top-0 z-50">
+      <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <a href="../index.html" class="flex items-center gap-2">
+          <img
+            src="../images/icons/monito_icon.png"
+            alt="Logo"
+            class="w-10 h-10"
+          />
+          <div>
+            <h1 class="text-2xl font-black text-moni-brown">MONI SHOP</h1>
+            <span
+              class="text-xs bg-moni-pink text-white px-2 py-0.5 rounded-full"
+              >CHECKOUT</span
+            >
+          </div>
+        </a>
+        <a
+          href="../index.html#/cart"
+          class="text-moni-pink font-bold hover:underline flex items-center gap-2"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+            ></path>
+          </svg>
+          Volver al carrito
+        </a>
+      </div>
+    </header>
+
+    <main id="checkout-content" class="max-w-6xl mx-auto py-12 px-6">
+      <div class="text-center py-20">
+        <div class="text-6xl mb-4">⏳</div>
+        <p class="text-moni-brown">Cargando checkout...</p>
+      </div>
+    </main>
+
+    <script type="module">
+      import Checkout from "../js/components/checkout.js";
+      window.Checkout = Checkout;
+      document.getElementById("checkout-content").innerHTML = Checkout.render();
+      setTimeout(() => Checkout.init(), 100);
+    </script>
+  </body>
+</html>
